@@ -1,0 +1,49 @@
+﻿syntax = "proto3";
+
+package tickets;
+
+option csharp_namespace = "Tickets.TicketsService.Contracts";
+
+service TicketsService {
+  rpc Create (CreateTicketRequest) returns (CreateTicketResponse);
+
+  rpc RegisterPassengerOnFlight (RegisterPassengerOnFlightRequest) returns (RegisterPassengerOnFlightResponse);
+
+  rpc GetTickets (GetTicketsRequest) returns (GetTicketsResponse);
+}
+
+message CreateTicketRequest {
+  int64 passenger_id = 1;
+  int64 flight_id = 2;
+  int64 place = 3;
+}
+
+message CreateTicketResponse {
+}
+
+message RegisterPassengerOnFlightRequest {
+  int64 ticket_id = 1;
+}
+
+message RegisterPassengerOnFlightResponse {
+}
+
+message GetTicketsRequest {
+  int32 cursor = 1;
+  int32 page_size = 2;
+  repeated int64 ticket_ids = 3;
+  repeated int64 flight_ids = 4;
+  repeated int64 passenger_ids = 5;
+}
+
+message GetTicketsResponse {
+  repeated Ticket tickets = 1;
+}
+
+message Ticket {
+  int64 ticket_id = 1;
+  int64 ticket_flight_id = 2;
+  int64 ticket_passenger_id = 3;
+  int64 ticket_place = 4;
+  bool ticket_registered = 5;
+}

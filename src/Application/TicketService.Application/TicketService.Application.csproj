@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\Presentation\TicketService.Presentation.FlightGrpcClient\TicketService.Presentation.FlightGrpcClient.csproj" />
+        <ProjectReference Include="..\..\Presentation\TicketService.Presentation.PassengerGrpcClient\TicketService.Presentation.PassengerGrpcClient.csproj" />
+        <ProjectReference Include="..\TicketService.Application.Abstractions\TicketService.Application.Abstractions.csproj"/>
+        <ProjectReference Include="..\TicketService.Application.Contracts\TicketService.Application.Contracts.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="FluentMigrator.Runner" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions"/>
+        <PackageReference Include="Microsoft.Extensions.Hosting" />
+    </ItemGroup>
+
+
+</Project>
