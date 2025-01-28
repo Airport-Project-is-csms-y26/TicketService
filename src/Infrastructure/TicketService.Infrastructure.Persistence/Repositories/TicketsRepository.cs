@@ -33,7 +33,7 @@ public class TicketsRepository : ITicketsRepository
             },
         };
 
-        await command.ExecuteReaderAsync(cancellationToken);
+        await command.ExecuteNonQueryAsync(cancellationToken);
     }
 
     public async Task RegisterPassengerOnFlight(long ticketId, CancellationToken cancellationToken)
